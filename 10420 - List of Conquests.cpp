@@ -11,13 +11,7 @@ int main() {
 		char national[80];
 		fgets(aline, 80, stdin);
 		sscanf(aline, "%s", national);
-		auto it = list.find(national);
-		if (it != list.end()) {
-			it->second += 1;
-		}
-		else {
-			list.insert({ national,1 });
-		}
+		list[national]++;
 	}
 	for (auto it : list) {
 		printf("%s %d\n", it.first.data(), it.second);
